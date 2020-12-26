@@ -29,6 +29,34 @@ def bubble_sort(array)
 end
 
 
-array_list = [4,3,7,1,40,60,100]
-puts bubble_sort(array_list)
 
+def  bubble_sort_by(array)
+    array_length = array.length
+      if array.length <= 1
+        array
+      else loop do
+        swapped = false
+        (array_length - 1).times do |i|
+          if yield(array[i], array[i+1]).positive?
+            array[i], array[i+1] = array[i+1], array[i]
+            swapped = true
+          end
+      end
+        break unless swapped  
+        end
+    end
+    print array
+  end
+  
+
+
+
+
+array = ['hi', 'hello', 'hey']
+array_list = [4,3,7,1,40,60,100]
+
+ puts bubble_sort(array_list)
+ 
+  bubble_sort_by(array) do |left, right|
+  left.length - right.length
+end
