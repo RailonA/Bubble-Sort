@@ -53,10 +53,10 @@ def  bubble_sort_by(array)
 
 
 array = ['hi', 'hello', 'hey']
-array_list = [4,3,7,1,40,60,100]
+array_list = [4,3,7,1,60,40,100]
 
  puts bubble_sort(array_list)
- 
+
   bubble_sort_by(array) do |left, right|
   left.length - right.length
 end
