@@ -47,7 +47,9 @@ end
 
 array = %w[hi hello hey]
 array_list = [4, 3, 7, 1, 60, 40, 100]
-puts bubble_sort(array_list)
-bubble_sort_by(array) do |left, right|
-  left.length - right.length
-end
+unsorted = (1..10).to_a.reverse!
+puts bubble_sort(unsorted)
+
+unsorted = %w[hello hiya hey hi h] 
+puts bubble_sort_by(unsorted) { |left, right| left.length - right.length }
+
